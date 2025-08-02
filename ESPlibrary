@@ -17,6 +17,9 @@ function EspLib.CreateBox()
     Position = function(x,y)
       box.Position = Vector2.new(x,y)
     end,
+    Color = function(a,b,c)
+    box.Color = Color3.fromRGB(a,b,c)
+    end,
     Thickness = function(v)
       box.Thickness = v
     end,
