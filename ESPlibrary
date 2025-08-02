@@ -1,0 +1,41 @@
+local EspLib = {}
+
+function EspLib.CreateBox()
+  local box = Drawing.new("Square")
+  box.Size = Vector2.new(60,100)
+  box.Position = Vector2.new(60,100)
+  box.Thickness = 10
+  box.Filled = false
+  box.Transparency = 0
+  box.Visible = true
+  box.ZIndex = 1
+  
+  return {
+    Size = function(x,y)
+      box.Size = Vector2.new(x,y)
+    end,
+    Position = function(x,y)
+      box.Position = Vector2.new(x,y)
+    end,
+    Thickness = function(v)
+      box.Thickness = v
+    end,
+    Filled = function(v)
+      box.Filled = v
+    end,
+    Transparency = function(v)
+      box.Transparency = v
+    end,
+    Visible = function(v)
+      box.Visible = v
+    end,
+    ZIndex = function(v)
+      box.ZIndex = v
+    end,
+    Clear = function()
+      box:Remove()
+    end
+  }
+end
+
+return EspLib
